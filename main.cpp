@@ -1,9 +1,15 @@
 #include <iostream>
 #include "./include/sqlite3.h"
 
-sqlite3* DB;
-
 using namespace std;
+
+void printMenu(){
+    cout << "menu";
+}
+
+sqlite3 *DB;
+
+
 
 int main(){
     string file = "./base.db";
@@ -16,6 +22,13 @@ int main(){
     else cout << "Conexion correcta";
 
     sqlite3_close(DB);
-    
+
+    bool menu = true;
+
+
+    int openDB = sqlite3_open(file.c_str(), &DB);
+
+
+
     return 0;
 }
